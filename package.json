@@ -5,8 +5,8 @@
   "homepage": "https://kape99.github.io/sidereal-confluence-counter/",
   "type": "module",
   "scripts": {
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -14,7 +14,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vue": "^3.4.21"
+    "bootstrap": "^5.3.3",
+    "bootstrap-vue": "^2.23.1",
+    "vue": "^3.4.26"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
