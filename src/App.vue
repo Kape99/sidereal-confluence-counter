@@ -4,7 +4,16 @@ import ResourceCounter from './components/ResourceCounter.vue';
 
 
 const totalScore = computed(() => {
-  return resources.value.reduce((accumulator, resource) => accumulator += (resource.count * resource.convertionRate) / 12, 0)
+  return resources.value.reduce((accumulator, resource) => accumulator += Math.floor((resource.count * resource.convertionRate) / 12), 0)
+})
+
+const remainderText = computed(() => {
+  let remainderScore = resources.value.reduce((accumulator, resource) => accumulator += ((resource.count * resource.convertionRate) % 12), 0)
+  if (remainderScore == 0) {
+    return ""
+  } else {
+    return remainderScore + "/12"
+  }
 })
 
 let id = 0
@@ -18,7 +27,7 @@ const resources = ref([
 </script>
 
 <template>
-  <h1>Total Score: {{ totalScore }}</h1>
+  <h1>Total Score: {{ totalScore }} {{ remainderText }}</h1>
   <ul>
 
     <li v-for="resource in resources" :key="resource.id">
