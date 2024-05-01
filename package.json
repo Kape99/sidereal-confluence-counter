@@ -2,8 +2,11 @@
   "name": "sidereal-confluence-counter",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://kape99.github.io/sidereal-confluence-counter/",
   "type": "module",
   "scripts": {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -19,6 +22,7 @@
     "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
+    "gh-pages": "^6.1.1",
     "prettier": "^3.2.5",
     "vite": "^5.2.8"
   }
